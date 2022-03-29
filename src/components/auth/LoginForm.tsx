@@ -1,5 +1,6 @@
 import { Button, Form, Input, Checkbox } from 'antd';
 import { Link, useModel } from 'umi';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
 
 export default function LoginForm() {
   const { login } = useModel('auth');
@@ -44,14 +45,23 @@ export default function LoginForm() {
           { required: true, message: 'Please enter email address' },
         ]}
       >
-        <Input size="large" placeholder="Email address" />
+        <Input
+          prefix={<MailOutlined className="site-form-item-icon" />}
+          size="large"
+          placeholder="Email address"
+        />
       </Form.Item>
       <Form.Item
         label="Password"
         name="password"
         rules={[{ required: true, message: 'Please enter password' }]}
       >
-        <Input.Password size="large" type="password" placeholder="Password" />
+        <Input.Password
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          size="large"
+          type="password"
+          placeholder="Password"
+        />
       </Form.Item>
       <Form.Item name="remember" valuePropName="checked">
         <Checkbox>Remember me</Checkbox>

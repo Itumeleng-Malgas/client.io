@@ -1,9 +1,9 @@
 import { columns } from '@/services/OrdersFunctions';
-import { connect, ordersState } from 'umi';
+import { connect, OrdersModelState } from 'umi';
 import { Table } from 'antd';
 
 interface DashboardProps {
-  orders: ordersState;
+  orders: OrdersModelState;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ orders }) => {
@@ -20,15 +20,61 @@ const Dashboard: React.FC<DashboardProps> = ({ orders }) => {
         }}
       />
       <div
-        className="border-start ms-1 px-2 d-none d-sm-block"
+        className="border-start ms-1 px-2 d-none d-md-block"
         style={{ width: '250px' }}
       >
-        <div>Completed Orders</div>
+        <span
+          style={{
+            minWidth: 200,
+            textAlign: 'center',
+          }}
+        >
+          <h3 style={{ color: '#032b64' }} className="fw-bold text-nowrap">
+            Ready Orders
+          </h3>
+          <div
+            style={{
+              width: '95%',
+              height: 40,
+              border: 'solid 1px blue',
+              margin: '5px',
+              borderRadius: 5,
+              color: 'green',
+            }}
+          >
+            <span className="h2 myLink">OD0012</span>
+          </div>
+          <div
+            style={{
+              width: '95%',
+              height: 40,
+              border: 'solid 1px blue',
+              margin: '5px',
+              borderRadius: 5,
+              color: 'green',
+            }}
+          >
+            <span className="h2">OD0012</span>
+          </div>
+
+          <div
+            style={{
+              width: '95%',
+              height: 40,
+              border: 'solid 1px blue',
+              margin: '5px',
+              borderRadius: 5,
+              color: 'green',
+            }}
+          >
+            <span className="h2">OD0012</span>
+          </div>
+        </span>
       </div>
     </div>
   );
 };
 
-export default connect(({ orders }: { orders: ordersState }) => ({
+export default connect(({ orders }: { orders: OrdersModelState }) => ({
   orders,
 }))(Dashboard);

@@ -1,4 +1,9 @@
 import { Input, Button, Form } from 'antd';
+import {
+  LockOutlined,
+  MailOutlined,
+  UsergroupAddOutlined,
+} from '@ant-design/icons';
 import { Link, useModel } from 'umi';
 
 export default function RegisterForm() {
@@ -31,16 +36,20 @@ export default function RegisterForm() {
           <span className="h2 font-weight-600 text-blue-dark">Register</span>
         </Form.Item>
         <Form.Item
-          label="Business Name"
+          label="Business ID"
           name="businessName"
           rules={[
             {
               required: true,
-              message: 'Please enter your business name!',
+              message: 'Please enter your business id!',
             },
           ]}
         >
-          <Input placeholder="Business name" />
+          <Input
+            prefix={<UsergroupAddOutlined className="site-form-item-icon" />}
+            placeholder="Business ID"
+            onBlur={() => console.log('left input')}
+          />
         </Form.Item>
         <Form.Item
           name="email"
@@ -56,7 +65,10 @@ export default function RegisterForm() {
             },
           ]}
         >
-          <Input placeholder="Email address" />
+          <Input
+            prefix={<MailOutlined className="site-form-item-icon" />}
+            placeholder="Email address"
+          />
         </Form.Item>
 
         <Form.Item
@@ -70,7 +82,10 @@ export default function RegisterForm() {
           ]}
           hasFeedback
         >
-          <Input.Password placeholder="Password" />
+          <Input.Password
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            placeholder="Password"
+          />
         </Form.Item>
 
         <Form.Item
@@ -95,7 +110,10 @@ export default function RegisterForm() {
             }),
           ]}
         >
-          <Input.Password placeholder="Confirm password" />
+          <Input.Password
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            placeholder="Confirm password"
+          />
         </Form.Item>
         <Form.Item>
           <Button

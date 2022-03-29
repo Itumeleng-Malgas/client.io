@@ -1,4 +1,4 @@
-import { Effect, Reducer, Subscription, ordersState } from 'umi';
+import { Effect, Reducer, Subscription, OrdersModelState } from 'umi';
 
 // socket.io types
 export interface ClientToServerEvents {
@@ -10,14 +10,14 @@ export interface ServerToClientEvents {
 }
 
 // orders model types
-export interface useOrders {
+export interface OrdersModelType {
   namespace: 'orders';
-  state: ordersState;
+  state: OrdersModelState;
   effects: {
     LOAD_ORDERS_DATA: Effect;
   };
   reducers: {
-    SET_STATE: Reducer<ordersState>;
+    SET_STATE: Reducer<OrdersModelState>;
   };
   subscriptions: { setup: Subscription };
 }

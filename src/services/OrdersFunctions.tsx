@@ -59,7 +59,7 @@ export const columns: any = [
     title: 'STATUS',
     dataIndex: 'status',
     key: 'status',
-    responsive: ['md'],
+    //responsive: ['md'],
     render: (text: string) => (
       <span
         className={

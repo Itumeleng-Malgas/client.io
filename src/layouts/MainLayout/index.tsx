@@ -1,55 +1,25 @@
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import RouterAnimation from '../routerAnimation';
-import { useModel } from 'umi';
+import { NavMenu, MainHeader } from '@/components';
 import { useToggle } from '@umijs/hooks';
-import { Drawer, Layout, Button } from 'antd';
-import React from 'react';
-import { auth } from '@/services/Firebase';
-
-import DrawerContents from '@/components/menu/DrawerContents';
-
+import { Drawer, Layout } from 'antd';
 const { Header, Content } = Layout;
 
-const MainLayout: React.FC = ({ children }) => {
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
+
+const MainLayout = ({ children }: MainLayoutProps) => {
   const { state, toggle } = useToggle();
-  const { logout } = useModel('auth');
 
   return (
     <Layout className="min-vh-100">
-      <Drawer
-        closable={false}
-        visible={state}
-        placement="left"
-        onClose={() => toggle()}
-        width="200px"
-      >
-        <DrawerContents toggle={toggle} />
-      </Drawer>
+      <NavMenu state={state} toggle={toggle} />
 
       <Layout>
-        <Header className="p-0 pe-3 bg-white justify-content-between hstack">
-          {React.createElement(state ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            style: { fontSize: '20px', margin: '0 10px' },
-            onClick: () => toggle(),
-          })}
-
-          <div>
-            <span className="me-2"> {auth.currentUser?.displayName}</span>
-
-            <Button
-              icon={<i className="fa fa-power-off me-1" />}
-              className=""
-              onClick={() => logout.run()}
-              type="text"
-            >
-              Logout
-            </Button>
-          </div>
+        <Header className="p-0 pe-3 bg-white">
+          <MainHeader toggle={toggle} />
         </Header>
 
-        <Content className="bg-white my-1 p-2">
-          <RouterAnimation>{children}</RouterAnimation>
-        </Content>
+        <Content className="bg-white my-1 p-2">{children}</Content>
       </Layout>
     </Layout>
   );

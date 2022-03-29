@@ -1,5 +1,5 @@
+import { OrdersModelType } from '@/interfaces/typings';
 import { socket } from '@/services/ServerFunctions';
-import { useOrders } from '@/interfaces';
 
 export interface Orders {
   id?: number;
@@ -11,11 +11,11 @@ export interface Orders {
   total: any;
 }
 
-export interface ordersState {
+export interface OrdersModelState {
   data: {}[];
 }
 
-const ordersModel: useOrders = {
+const ordersModel: OrdersModelType = {
   namespace: 'orders',
   state: { data: [] },
   reducers: { SET_STATE: (state, { payload }) => ({ ...state, ...payload }) },

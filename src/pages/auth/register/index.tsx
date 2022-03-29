@@ -4,9 +4,9 @@ import { Helmet } from 'umi';
 
 export default function Register() {
   return (
-    <AuthLayout>
+    <div>
       <Helmet title="Register" />
       <RegisterForm />
-    </AuthLayout>
+    </div>
   );
 }

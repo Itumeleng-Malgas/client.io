@@ -4,9 +4,9 @@ import { Helmet } from 'umi';
 
 export default function PasswordReset() {
   return (
-    <AuthLayout>
+    <div>
       <Helmet title="Reset Password" />
       <PasswordResetForm />
-    </AuthLayout>
+    </div>
   );
 }

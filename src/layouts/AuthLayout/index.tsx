@@ -1,15 +1,14 @@
 import React from 'react';
-import { Row, Col, Layout } from 'antd';
+import { Row, Col } from 'antd';
 import { Link, Helmet } from 'umi';
-import RouterAnimation from '../routerAnimation';
 
 const AuthLayout: React.FC = ({ children }) => {
   return (
     <Row className="container vstack min-vh-100">
-      <Helmet titleTemplate="Auth | %s" />
+      <Helmet titleTemplate="NobleQ | %s" />
       <div className="d-flex justify-content-between lead  my-2">
-        <span className="d-none d-md-block text-primary">
-          Firebase | <span className="text-danger">Authentication</span>
+        <span className="d-none d-md-block text-primary fw-bold">
+          Nobledevs | <span className="text-danger">NobleQ</span>
         </span>
 
         <span>
@@ -25,7 +24,7 @@ const AuthLayout: React.FC = ({ children }) => {
         justify="center"
       >
         <Col xs={24} sm={20} md={18} lg={14} xl={12}>
-          <RouterAnimation>{children}</RouterAnimation>
+          {children}
         </Col>
       </Row>
       <div style={{ fontSize: '11px' }} className="text-center my-2">

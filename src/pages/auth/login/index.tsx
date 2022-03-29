@@ -4,9 +4,9 @@ import { Helmet } from 'umi';
 
 export default function Login() {
   return (
-    <AuthLayout>
+    <div>
       <Helmet title="Login" />
       <LoginForm />
-    </AuthLayout>
+    </div>
   );
 }

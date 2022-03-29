@@ -1,3 +1,4 @@
+import { MailOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
 import { Link } from 'umi';
 
@@ -15,7 +16,11 @@ export default function PasswordResetForm() {
           { required: true, message: 'Please enter your email address' },
         ]}
       >
-        <Input size="large" placeholder="Email" />
+        <Input
+          prefix={<MailOutlined className="site-form-item-ico" />}
+          size="large"
+          placeholder="Email"
+        />
       </Form.Item>
 
       <Form.Item>
