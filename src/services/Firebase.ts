@@ -4,12 +4,12 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyAouLlyYGlmyENRwvIG-c0ADHQOuQncH7Q',
-  authDomain: 'fir-tutorial-29f76.firebaseapp.com',
-  projectId: 'fir-tutorial-29f76',
-  storageBucket: 'fir-tutorial-29f76.appspot.com',
-  messagingSenderId: '283199213816',
-  appId: '1:283199213816:web:91579396df41192e05eb0d',
+  apiKey: 'cH7Q',
+  authDomain: 'fir-tutorial-29.firebaseapp.com',
+  projectId: 'fir-tutorial-29',
+  storageBucket: 'fir-tutorial-29.appspot.com',
+  messagingSenderId: '283816',
+  appId: '1:28316:web:f411eb0d',
 };
 
 // Initialize Firebase and set app persistance mode
